@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    th,
+    button {
+        font-family: "Aqum Two", sans-serif;
+        font-variant: small-caps;
+        overflow-wrap: break-word;
+    }
+
+    h1 {
+        @apply text-5xl;
+        text-shadow: 1px 1px 8px rgb(0, 0, 0, .25);
+    }
+
+    h2 {
+        @apply text-4xl;
+        text-shadow: 1px 1px 8px rgb(0, 0, 0, .25);
+    }
+
+    h3 {
+        @apply text-3xl;
+        text-shadow: 1px 1px 8px rgb(0, 0, 0, .25);
+    }
+
+    h4 {
+        @apply text-2xl;
+        text-shadow: 1px 1px 8px rgb(0, 0, 0, .25);
+    }
+
+    h5 {
+        @apply text-2xl;
+        font-family: "Montserrat", sans-serif;
+        overflow-wrap: break-word;
+    }
+
+    h6 {
+        @apply text-xl;
+        font-family: "Montserrat", sans-serif;
+        overflow-wrap: break-word;
+    }
+
+    p,
+    a,
+    label {
+        @apply text-xs;
+        font-family: "Montserrat", sans-serif;
+        overflow-wrap: break-word;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 10px 35px 20px 32px;
+        border-radius: 22px;
+        text-shadow: 1px 1px 8px rgb(0, 0, 0, .25);
+        box-shadow: 0 0 25.4px 2px rgba(255, 255, 255, 0.25), inset -5px -5px 2.6px 0 rgba(44, 67, 95, 0.61);
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    li {
+        background-image: url('src/assets/star.png');
+        background-size: 15px 15px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        padding-left: 18px;
+        list-style-type: none;
+        overflow-wrap: break-word;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"],
+    select {
+        width: 100%;
+        background-color: white;
+        color: #172C43;
+        border: none;
+        border-radius: 19px;
+        font-size: 16px;
+        padding: 15px 19px;
+        margin-bottom: 20px;
+    }
+
+    input[type='file'] {
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+    }
+
+    input[type='radio'] {
+        width: 16px;
+        height: 16px;
+        border: none;
+    }
+
+    table {
+        width: 100%;
+        border-radius: 19px;
+        overflow: hidden;
+    }
+
+    thead {
+        background-color: #2C435F;
+    }
+
+    th {
+        @apply text-xl;
+        color: white;
+        background-color: #2C435F;
+        text-align: start;
+        padding: 10px;
+        overflow-wrap: break-word;
+    }
+
+    td {
+        color: #2C435F;
+        background-color: white;
+        border-bottom: 1px solid #2C435F;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+        padding: 15px 19px;
+        border-radius: 19px;
+        color: #2C435F;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 640px) {
+        button {
+            width: auto;
+            padding: 9px 25px 18px 25px;
+        }
+
+        p,
+        a,
+        label {
+            @apply text-base;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"],
+        select {
+            width: 370px;
+        }
+    }
+}
+
+@layer components {
+    :root {
+        font-family: "Montserrat", sans-serif;
+        line-height: 0.8;
+        color: white;
+        background: url('../assets/bg-image.png'), linear-gradient(110.71deg, rgb(44, 67, 95) 6.352%, rgb(6, 23, 44) 59.163%);
+        background-size: 110% auto, cover;
+        background-repeat: repeat-y, no-repeat;
+        background-position: top left, top center;
+    }
+
+    #root {
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .box-shadow {
+        box-shadow: inset -2px -2px 4px 0 rgb(0, 0, 0, .25), inset 2px 2px 4px 0 rgb(255, 255, 255, .09), 2px 2px 8px 0 rgb(0, 0, 0, .25);
+    }
+
+    .blue {
+        background-color: #2C435F;
+    }
+
+    .star {
+        display: block;
+        width: 24px;
+        height: 24px;
+        mask-image: url('../../src/assets/star.svg');
+        mask-size: cover;
+        background-color: gray;
+    }
+
+    .gold {
+        background-color: gold;
+    }
+
+    .partial {
+        background: linear-gradient(to right, gold 50%, gray 50%);
+    }
+
+
+    .model {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+
+    .clouds {
+        position: fixed;
+        width: 200px;
+        height: auto;
+        bottom: 20vh;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+    .clouds.hid {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .clouds.vis {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .cloud {
+        max-width: 200px;
+        border-radius: 50%;
+        background-color: white;
+        padding: 23px;
+        box-shadow: 0px 0px 7px rgb(217, 217, 217);
+    }
+
+    .cloud2 {
+        width: 25px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0px 0px 7px rgb(217, 217, 217);
+        margin-left: auto;
+    }
+
+
+    @media (min-width: 640px) {
+        .clouds {
+            position: fixed;
+            width: 250px;
+            height: auto;
+            bottom: 20vh;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        .clouds.hid {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .clouds.vis {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cloud {
+            max-width: 250px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 23px;
+            box-shadow: 0px 0px 7px rgb(217, 217, 217);
+        }
+
+        .cloud2 {
+            width: 25px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0px 0px 7px rgb(217, 217, 217);
+            margin-left: auto;
+        }
+    }
+}
